@@ -355,5 +355,178 @@ export const members: Member[] = [
             "Visual Programming Specialist with Dynamo, C# and Grasshopper",
         ],
     },
+    {
+        slug: "kevin-meza",
+        name: "Kevin Anthony Meza Mallma",
+        shortName: "Kevin Meza",
+        title: "BIM Specialist, BIM Developer and Civil Engineer",
+        location: "Lima, Peru",
+        email: "k.meza.civil@gmail.com",
+
+        summary:
+            "Licensed civil engineer from the Pontificia Universidad Católica del Perú with more than five years of experience leading BIM implementation and supervision for major infrastructure and building projects. He specializes in process automation using C# with the Revit and AutoCAD Civil 3D APIs, AI integrations, AI agent development, Power BI and collaborative information environments. He is also the founder of DJP SAC, an AEC digital transformation consultancy.",
+
+        interests: [
+            "BIM Management",
+            "BIM Development",
+            "Digital Transformation",
+            "Artificial Intelligence",
+            "AI Agents",
+            "Business Intelligence",
+            "Infrastructure Delivery",
+            "Engineering Automation",
+            "Photogrammetry and Drones",
+        ],
+
+        skills: [
+            "C#",
+            "Python",
+            "Dynamo",
+            "VBA",
+            "Revit API",
+            "AutoCAD Civil 3D API",
+            "Autodesk Revit",
+            "AutoCAD Civil 3D",
+            "Navisworks",
+            "Autodesk Construction Cloud",
+            "BIM 360",
+            "InfraWorks",
+            "BIMCollab Zoom",
+            "Archicad",
+            "Trimble Connect",
+            "Power BI",
+            "SQL Server",
+            "Microsoft Excel",
+            "Pix4D",
+            "Global Mapper",
+            "ArcGIS",
+            "QGIS",
+            "Autodesk ReCap",
+            "Dronelink",
+            "ISO 19650",
+            "NEC Contracts",
+            "Microsoft Project",
+            "S10",
+            "Delphin Express",
+            "Claude Code",
+        ],
+
+        education: [
+            {
+                degree: "Master’s Degree in Business Digital Transformation",
+                institution:
+                    "Universidad Peruana de Ciencias Aplicadas",
+                period: "2024 – Present",
+                details: "Currently completing the final academic cycle",
+            },
+            {
+                degree: "Professional Degree in Civil Engineering",
+                institution:
+                    "Pontificia Universidad Católica del Perú",
+                period: "2013 – 2020",
+                details:
+                    "Degree obtained through thesis in May 2024 · Licensed Civil Engineer CIP 347239",
+            },
+        ],
+
+        experience: [
+            {
+                position: "BIM Coordinator and BIM Developer",
+                organization: "OHLA Peru",
+                period: "May 2026 – Present",
+                description:
+                    "BIM execution planning, Power BI progress reporting, automated Revit and Civil 3D workflows, drone photogrammetry and development of an AI agent for controlling engineering software through natural language.",
+            },
+            {
+                position: "BIM Supervisor and BIM Developer",
+                organization: "720 BIM",
+                period: "August 2025 – April 2026",
+                description:
+                    "BIM supervision for the Bicentennial Schools Package 02, including execution planning, process standardization, Power BI reporting, automation and technical closeout strategy.",
+            },
+            {
+                position: "BIM Specialist and BIM Developer",
+                organization: "Consorcio Sinohydro – Flesan",
+                period: "December 2024 – June 2025",
+                description:
+                    "Updated the BIM Execution Plan and 4D/5D guidelines for the Quebrada Cansas project. Developed Power BI dashboards, augmented-reality tools and automated Revit and Civil 3D workflows.",
+            },
+            {
+                position: "BIM Specialist and BIM Developer",
+                organization: "DVC – Grupo Flesan",
+                period: "April 2024 – November 2024",
+                description:
+                    "Led the production of as-built models and drawings for the Matagente River Defense project, including Power BI reporting, BIM 360 management, 4D modeling and point-cloud processing.",
+            },
+            {
+                position: "Founder and BIM Consultant",
+                organization: "DJP SAC – Digital Jump Peru",
+                period: "2024 – Present",
+                description:
+                    "Provides BIM automation and digital transformation consulting for the AEC sector. Developed Property Sets Management, a commercial Civil 3D add-in with Supabase and Stripe integration, and delivered C# API training for civil engineers.",
+            },
+            {
+                position: "BIM Coordinator and BIM Developer",
+                organization: "Benito Roggio e Hijos S.A.",
+                period: "January 2024 – April 2024",
+                description:
+                    "Prepared the BIM Execution Plan and coordinated model auditing, Autodesk Construction Cloud information containers, clash detection and federated InfraWorks models for the Sullana-Bellavista drainage project.",
+            },
+            {
+                position: "Construction BIM Coordinator",
+                organization: "Obrascón Huarte Lain",
+                period: "May 2023 – January 2024",
+                description:
+                    "Managed BIM coordination, construction KPIs, contractual documentation under NEC 3 and the integration of BIM models, point clouds and GIS data for river defense projects.",
+            },
+            {
+                position: "Construction BIM Coordinator",
+                organization:
+                    "SICE – Sociedad Ibérica de Construcciones Eléctricas",
+                period: "April 2022 – March 2023",
+                description:
+                    "Led multidisciplinary BIM coordination, model auditing, production metrics, quantity extraction, as-built supervision and drone photogrammetry for the COAR Ancash project.",
+            },
+            {
+                position: "BIM Coordinator and Modeler",
+                organization: "HYQ Ingenieros",
+                period: "December 2021 – February 2022",
+                description:
+                    "Reviewed healthcare facility models, coordinated disciplines, quantified materials, created LOD 400 families and exported IFC models with COBie parameters.",
+            },
+            {
+                position: "BIM Engineering Assistant",
+                organization: "Provías Nacional",
+                period: "May 2021 – December 2021",
+                description:
+                    "Modeled roadway structures and drainage works using Revit and Civil 3D. Developed Dynamo automations, parametric families, InfraWorks federations and GIS integrations.",
+            },
+            {
+                position: "BIM Coordinator and Modeler",
+                organization: "DYET Tecnología y Construcción",
+                period: "October 2020 – February 2021",
+                description:
+                    "Modeled structural, architectural and building-service systems, performed multidisciplinary coordination and 4D simulation, and managed client information through BIM 360.",
+            },
+            {
+                position: "BIM Coordinator",
+                organization: "ENMACON S.A.C.",
+                period: "November 2019 – October 2020",
+                description:
+                    "Coordinated and modeled multiple disciplines, managed information according to ISO 19650 and organized Integrated Concurrent Engineering sessions.",
+            },
+        ],
+
+        certifications: [
+            "buildingSMART International – Professional Certification OpenBIM, BIM Fundamentals",
+            "CIP Lima – BIM Project Coordinator, 200 hours",
+            "Lambda Ingeniería e Innovación – Revit API Process Automation",
+            "Autodesk ATC – Navisworks Manage Project Coordinator",
+            "PlanBIM Chile, BID and CORFO – Introduction to BIM Methodology",
+            "Autodesk and ITCADPERU – BIM Coordination, BEP Development and Dynamo Automation",
+            "Innovum Corp – BIM Management Specialization",
+            "VICSAN and BIM Latam – Exchange Information Requirements Review",
+        ],
+    },
 ]
 
