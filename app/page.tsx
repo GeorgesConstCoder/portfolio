@@ -1,69 +1,178 @@
-import Image from "next/image";
+import styles from "./page.module.css";
+
+const projects = [
+  {
+    number: "01",
+    category: "Computer Vision · M.S. Thesis",
+    title: "AI for safer work zones",
+    description:
+      "Sistema de inteligencia artificial para detectar, rastrear y evaluar dispositivos temporales de control de tráfico mediante YOLO, DINOv2, OCR y datos GPS.",
+  },
+  {
+    number: "02",
+    category: "Blazor · C# · Azure",
+    title: "Construction Finance Toolkit",
+    description:
+      "Aplicación web para analizar valor del dinero en el tiempo, préstamos, refinanciamiento y flujos de caja.",
+  },
+  {
+    number: "03",
+    category: "Revit API · C# · BIM",
+    title: "BIM Automation",
+    description:
+      "Herramientas para automatizar elementos, parámetros y datos de modelos de Autodesk Revit.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main className={styles.notebook}>
+      <div className={styles.notebookMargin} />
+
+      <div className={styles.binderHoles} aria-hidden="true">
+        {Array.from({ length: 12 }).map((_, index) => (
+          <span key={index} />
+        ))}
+      </div>
+
+      <header className={styles.header}>
+        <a href="#" className={styles.logo}>
+          JC
+        </a>
+
+        <nav className={styles.navigation}>
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="mailto:jisraelcorrea@live.com">Contact</a>
+        </nav>
+      </header>
+
+      <section className={styles.hero}>
+        <div>
+          <p className={styles.smallTitle}>
+            Civil Engineer · AI Builder
+          </p>
+
+          <p className={styles.handwritten}>
+            Notes from an engineer →
+          </p>
+
+          <h1 className={styles.title}>
+            I build at the intersection of{" "}
+            <span className={styles.highlight}>
+              infrastructure
+            </span>{" "}
+            and intelligence.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+
+          <p className={styles.description}>
+            Civil engineer and researcher creating computer vision systems,
+            BIM automations and practical software for the built environment.
+          </p>
+
+          <a href="#projects" className={styles.button}>
+            Explore my work →
+          </a>
+        </div>
+
+        <div className={styles.paperCard}>
+          <div className={styles.tape} />
+
+          <p className={styles.cardLabel}>CURRENT RESEARCH</p>
+
+          <div className={styles.drawing}>
+            <div
+              className={`${styles.detectionBox} ${styles.boxOne}`}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              <span>DRUM</span>
+              <small>0.94</small>
+            </div>
+
+            <div
+              className={`${styles.detectionBox} ${styles.boxTwo}`}
             >
-              Learning
-            </a>{" "}
-            center.
+              <span>TTC SIGN</span>
+              <small>0.89</small>
+            </div>
+
+            <p className={styles.pipeline}>
+              YOLO → DINOv2 → GPS → C-25
+            </p>
+          </div>
+
+          <p className={styles.cardNote}>
+            Computer vision for temporary traffic control inspections.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className={styles.projects} id="projects">
+        <div className={styles.sectionTitle}>
+          <p className={styles.sectionTitleText}>
+            Selected work
+          </p>
+
+          <h2 className={styles.sectionHeading}>
+            Research and tools built to solve real problems.
+          </h2>
         </div>
-      </main>
-    </div>
+
+        <div>
+          {projects.map((project) => (
+            <article
+              className={styles.project}
+              key={project.number}
+            >
+              <span className={styles.projectNumber}>
+                {project.number}
+              </span>
+
+              <div>
+                <p className={styles.projectCategory}>
+                  {project.category}
+                </p>
+
+                <h3 className={styles.projectTitle}>
+                  {project.title}
+                </h3>
+
+                <p className={styles.projectDescription}>
+                  {project.description}
+                </p>
+              </div>
+
+              <span className={styles.arrow}>↗</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.about} id="about">
+        <p className={styles.smallTitle}>About me</p>
+
+        <h2 className={styles.sectionHeading}>
+          Engineering judgment translated into working technology.
+        </h2>
+
+        <p className={styles.aboutText}>
+          M.S. in Civil Engineering from the University of Alabama at
+          Birmingham, focused on construction, computer vision, BIM and
+          engineering software development.
+        </p>
+      </section>
+
+      <footer className={styles.footer}>
+        <p className={styles.footerNote}>
+          Have an engineering problem worth solving?
+        </p>
+
+        <a
+          href="mailto:jisraelcorrea@live.com"
+          className={styles.footerLink}
+        >
+          Let&apos;s build it →
+        </a>
+      </footer>
+    </main>
   );
 }

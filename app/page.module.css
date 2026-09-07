@@ -1,0 +1,514 @@
+.notebook {
+    --paper: #f7f3e9;
+    --ink: #192238;
+    --blue: #2454a6;
+    --red: #d96f63;
+    --yellow: #f4dc75;
+    --line: rgba(78, 133, 184, 0.18);
+
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    color: var(--ink);
+    background-color: var(--paper);
+    background-image: repeating-linear-gradient(to bottom,
+            transparent 0,
+            transparent 31px,
+            var(--line) 32px);
+}
+
+.notebookMargin {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 78px;
+    width: 2px;
+    background: rgba(217, 111, 99, 0.55);
+}
+
+/* Huecos de la hoja */
+
+.binderHoles {
+    position: absolute;
+    z-index: 3;
+    top: 90px;
+    bottom: 70px;
+    left: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    pointer-events: none;
+}
+
+.binderHoles span {
+    width: 21px;
+    height: 21px;
+    border: 1px solid rgba(25, 34, 56, 0.18);
+    border-radius: 50%;
+    background: #d8d2c6;
+    box-shadow:
+        inset 2px 2px 4px rgba(35, 33, 27, 0.3),
+        1px 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+/* Navegación */
+
+.header {
+    position: relative;
+    z-index: 2;
+    height: 84px;
+    margin-left: 80px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--ink);
+    background: rgba(247, 243, 233, 0.88);
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border: 2px solid var(--ink);
+    color: var(--ink);
+    background: var(--yellow);
+    font-family: "Courier New", monospace;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 4px 4px 0 var(--ink);
+    transform: rotate(-3deg);
+}
+
+.navigation {
+    display: flex;
+    gap: 34px;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.navigation a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.navigation a:hover {
+    border-color: var(--red);
+}
+
+/* Presentación */
+
+.hero {
+    position: relative;
+    z-index: 1;
+    min-height: 680px;
+    margin-left: 80px;
+    padding: 100px 6%;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 75px;
+    align-items: center;
+}
+
+.smallTitle {
+    color: var(--blue);
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.handwritten {
+    margin: 25px 0 -10px 50px;
+    color: var(--red);
+    font-family: "Comic Sans MS", "Bradley Hand", cursive;
+    font-size: 18px;
+    font-style: italic;
+    transform: rotate(-4deg);
+}
+
+.title {
+    max-width: 760px;
+    margin: 24px 0;
+    font-family: Georgia, serif;
+    font-size: clamp(3.2rem, 6vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.06em;
+}
+
+.highlight {
+    position: relative;
+    color: var(--blue);
+    font-style: italic;
+}
+
+.highlight::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -2%;
+    bottom: 2px;
+    left: -2%;
+    height: 11px;
+    background: rgba(244, 220, 117, 0.8);
+    transform: rotate(-1deg);
+}
+
+.description {
+    max-width: 650px;
+    color: #505a69;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 16px 20px;
+    border: 2px solid var(--ink);
+    color: white;
+    background: var(--blue);
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 5px 5px 0 var(--ink);
+    transform: rotate(-1deg);
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.button:hover {
+    box-shadow: 2px 2px 0 var(--ink);
+    transform: translate(3px, 3px);
+}
+
+/* Tarjeta de investigación */
+
+.paperCard {
+    position: relative;
+    min-height: 440px;
+    padding: 30px;
+    border: 2px solid var(--ink);
+    background-color: #fffdf8;
+    background-image:
+        linear-gradient(rgba(36, 84, 166, 0.09) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(36, 84, 166, 0.09) 1px,
+            transparent 1px);
+    background-size: 25px 25px;
+    box-shadow: 9px 10px 0 rgba(25, 34, 56, 0.16);
+    transform: rotate(2deg);
+}
+
+.tape {
+    position: absolute;
+    top: -17px;
+    left: 50%;
+    width: 115px;
+    height: 34px;
+    background: rgba(224, 200, 138, 0.72);
+    transform: translateX(-50%) rotate(-4deg);
+}
+
+.cardLabel {
+    display: inline-block;
+    padding: 5px 8px;
+    background: var(--yellow);
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    font-weight: 700;
+    transform: rotate(-2deg);
+}
+
+.drawing {
+    position: relative;
+    height: 270px;
+    margin-top: 15px;
+    border: 2px dashed rgba(25, 34, 56, 0.45);
+}
+
+.pipeline {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    left: 0;
+    text-align: center;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.detectionBox {
+    position: absolute;
+    border: 3px solid var(--red);
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.detectionBox span {
+    position: absolute;
+    top: -23px;
+    left: -3px;
+    padding: 3px 5px;
+    background: var(--yellow);
+    white-space: nowrap;
+}
+
+.detectionBox small {
+    position: absolute;
+    right: -3px;
+    bottom: -20px;
+}
+
+.boxOne {
+    top: 75px;
+    left: 20%;
+    width: 65px;
+    height: 110px;
+    transform: rotate(-2deg);
+}
+
+.boxTwo {
+    top: 45px;
+    right: 16%;
+    width: 110px;
+    height: 80px;
+    transform: rotate(2deg);
+}
+
+.cardNote {
+    font-family: "Comic Sans MS", "Bradley Hand", cursive;
+    font-size: 15px;
+    font-style: italic;
+}
+
+/* Secciones */
+
+.projects,
+.about {
+    position: relative;
+    z-index: 1;
+    margin-left: 80px;
+    padding: 110px 6%;
+    border-top: 2px dashed rgba(25, 34, 56, 0.5);
+}
+
+.sectionTitle {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: 55px;
+}
+
+.sectionTitleText {
+    color: var(--blue);
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.sectionHeading {
+    max-width: 720px;
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+
+/* Proyectos */
+
+.project {
+    min-height: 230px;
+    padding: 38px 24px;
+    display: grid;
+    grid-template-columns: 80px 1fr 50px;
+    gap: 25px;
+    border-top: 2px solid rgba(25, 34, 56, 0.7);
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.project:hover {
+    background-color: rgba(244, 220, 117, 0.35);
+    transform: translateX(6px) rotate(-0.3deg);
+}
+
+.project:last-child {
+    border-bottom: 2px solid rgba(25, 34, 56, 0.7);
+}
+
+.projectNumber {
+    color: var(--red);
+    font-family: "Courier New", monospace;
+    font-weight: 700;
+}
+
+.projectCategory {
+    display: inline-block;
+    margin: 0 0 15px;
+    padding: 3px 6px;
+    background: var(--yellow);
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.projectTitle {
+    margin: 0 0 15px;
+    font-family: Georgia, serif;
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
+}
+
+.projectDescription {
+    max-width: 690px;
+    color: #586170;
+    line-height: 1.7;
+}
+
+.arrow {
+    color: var(--red);
+    font-size: 28px;
+}
+
+/* Sobre mí */
+
+.aboutText {
+    max-width: 720px;
+    color: #505a69;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* Pie de página */
+
+.footer {
+    position: relative;
+    z-index: 1;
+    margin-left: 80px;
+    padding: 85px 6%;
+    border-top: 3px solid var(--ink);
+    background: #e7e0d2;
+}
+
+.footerNote {
+    font-family: "Comic Sans MS", "Bradley Hand", cursive;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.footerLink {
+    display: inline-block;
+    color: var(--ink);
+    border-bottom: 8px solid rgba(217, 111, 99, 0.7);
+    font-family: Georgia, serif;
+    font-size: clamp(2.7rem, 6vw, 5rem);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Tablets */
+
+@media (max-width: 850px) {
+    .notebookMargin {
+        left: 38px;
+    }
+
+    .binderHoles {
+        left: 9px;
+    }
+
+    .binderHoles span {
+        width: 16px;
+        height: 16px;
+    }
+
+    .header,
+    .hero,
+    .projects,
+    .about,
+    .footer {
+        margin-left: 40px;
+    }
+
+    .navigation {
+        gap: 15px;
+        font-size: 12px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 70px;
+    }
+
+    .sectionTitle {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project {
+        grid-template-columns: 45px 1fr;
+    }
+
+    .arrow {
+        grid-column: 2;
+    }
+}
+
+/* Celulares */
+
+@media (max-width: 550px) {
+    .header {
+        padding: 0 20px;
+    }
+
+    .navigation a:nth-child(2) {
+        display: none;
+    }
+
+    .hero,
+    .projects,
+    .about,
+    .footer {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .handwritten {
+        margin-left: 0;
+    }
+
+    .project {
+        grid-template-columns: 1fr;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .arrow {
+        grid-column: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .button,
+    .project {
+        transition: none;
+    }
+}
