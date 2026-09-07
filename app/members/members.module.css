@@ -1,0 +1,277 @@
+.page {
+    min-height: 100vh;
+    padding: 7rem 1.5rem 5rem;
+    color: #172033;
+    background:
+        linear-gradient(rgba(42, 91, 215, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(42, 91, 215, 0.055) 1px, transparent 1px),
+        #f7f5ef;
+    background-size: 28px 28px;
+}
+
+.container {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+}
+
+.header {
+    max-width: 760px;
+    margin-bottom: 3.5rem;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #2457d6;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.header h1 {
+    max-width: 720px;
+    margin: 0;
+    color: #111827;
+    font-size: clamp(2.6rem, 6vw, 5.25rem);
+    font-weight: 800;
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+}
+
+.header p {
+    max-width: 650px;
+    margin: 1.5rem 0 0;
+    color: #596273;
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    min-height: 490px;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 1.75rem;
+    border: 1px solid rgba(23, 32, 51, 0.14);
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 18px 45px rgba(31, 42, 68, 0.07);
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.card::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #2457d6, #19a7a0);
+    content: "";
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(36, 87, 214, 0.35);
+    box-shadow: 0 24px 60px rgba(31, 42, 68, 0.12);
+}
+
+.cardTop {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.number {
+    color: #2457d6;
+    font-family: monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.location {
+    max-width: 65%;
+    color: #697386;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    text-align: right;
+}
+
+.cardContent {
+    flex: 1;
+}
+
+.cardContent h2 {
+    margin: 0;
+    color: #111827;
+    font-size: clamp(1.75rem, 3vw, 2.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+}
+
+.title {
+    margin: 0.75rem 0 0;
+    color: #2457d6;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.summary {
+    margin: 1.5rem 0 0;
+    color: #596273;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 1.75rem;
+}
+
+.tags span {
+    padding: 0.45rem 0.7rem;
+    border: 1px solid rgba(36, 87, 214, 0.16);
+    border-radius: 999px;
+    color: #34415a;
+    background: rgba(36, 87, 214, 0.055);
+    font-size: 0.75rem;
+    font-weight: 650;
+}
+
+/* Área inferior de acciones */
+
+.cardActions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(23, 32, 51, 0.1);
+}
+
+/* Los dos enlaces conservan el estilo sencillo original */
+
+.profileLink,
+.pageLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: #172033;
+    font-size: 0.9rem;
+    font-weight: 750;
+    text-decoration: none;
+    transition: color 180ms ease;
+}
+
+.pageLink {
+    margin-left: auto;
+    color: #2457d6;
+}
+
+.profileLink span,
+.pageLink span {
+    color: #2457d6;
+    font-size: 1.15rem;
+    transition: transform 180ms ease;
+}
+
+.profileLink:hover,
+.pageLink:hover {
+    color: #2457d6;
+}
+
+.profileLink:hover span,
+.pageLink:hover span {
+    transform: translateX(5px);
+}
+
+/* Si no existe View page, View profile usa todo el ancho */
+
+.profileLink:only-child {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.profileLink:focus-visible,
+.pageLink:focus-visible {
+    border-radius: 0.35rem;
+    outline: 3px solid rgba(36, 87, 214, 0.28);
+    outline-offset: 5px;
+}
+
+@media (max-width: 800px) {
+    .page {
+        padding-top: 5.5rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 520px) {
+    .page {
+        padding-inline: 1rem;
+    }
+
+    .header {
+        margin-bottom: 2.5rem;
+    }
+
+    .header h1 {
+        font-size: 2.65rem;
+    }
+
+    .card {
+        padding: 1.35rem;
+        border-radius: 1.15rem;
+    }
+
+    .cardTop {
+        margin-bottom: 2.25rem;
+    }
+
+    .cardActions {
+        gap: 1rem;
+    }
+
+    .profileLink,
+    .pageLink {
+        font-size: 0.85rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .card,
+    .profileLink,
+    .pageLink,
+    .profileLink span,
+    .pageLink span {
+        transition: none;
+    }
+
+    .card:hover {
+        transform: none;
+    }
+}
