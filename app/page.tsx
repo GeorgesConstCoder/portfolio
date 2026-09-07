@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import Image from "next/image";
 
 const projects = [
   {
@@ -81,27 +82,29 @@ export default function Home() {
           <p className={styles.cardLabel}>CURRENT RESEARCH</p>
 
           <div className={styles.drawing}>
-            <div
-              className={`${styles.detectionBox} ${styles.boxOne}`}
-            >
-              <span>DRUM</span>
-              <small>0.94</small>
-            </div>
+            <Image
+              src="/jorge-correa.png"
+              alt="Jorge Correa, civil engineer and AI researcher"
+              fill
+              priority
+              sizes="(max-width: 850px) 90vw, 35vw"
+              className={styles.portrait}
+            />
 
             <div
-              className={`${styles.detectionBox} ${styles.boxTwo}`}
+              className={`${styles.detectionBox} ${styles.faceBox}`}
             >
-              <span>TTC SIGN</span>
-              <small>0.89</small>
+              <span>ENGINEER</span>
+              <small>0.99</small>
             </div>
 
             <p className={styles.pipeline}>
-              YOLO → DINOv2 → GPS → C-25
+              CIVIL ENGINEERING → BIM → AI
             </p>
           </div>
 
           <p className={styles.cardNote}>
-            Computer vision for temporary traffic control inspections.
+            Civil engineering, artificial intelligence and practical innovation.
           </p>
         </div>
       </section>
