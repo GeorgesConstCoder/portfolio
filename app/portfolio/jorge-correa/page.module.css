@@ -379,7 +379,8 @@
 .projects,
 .experience,
 .about,
-.skills {
+.skills,
+.knowledge {
     position: relative;
     z-index: 1;
     margin-left: 74px;
@@ -683,6 +684,116 @@
     font-size: 13px;
 }
 
+/* Knowledge Studio */
+
+.knowledge {
+    background:
+        linear-gradient(135deg, rgba(30, 84, 183, 0.055), transparent 45%),
+        rgba(255, 253, 248, 0.36);
+}
+
+.knowledgeGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.knowledgeTrack {
+    position: relative;
+    min-height: 360px;
+    padding: 30px;
+    overflow: hidden;
+    border: 2px solid var(--ink);
+    background: var(--white-paper);
+    box-shadow: 7px 7px 0 rgba(24, 33, 55, 0.13);
+}
+
+.knowledgeTrack:nth-child(2) {
+    transform: rotate(0.4deg);
+}
+
+.knowledgeTrack::after {
+    content: "";
+    position: absolute;
+    top: -34px;
+    right: -34px;
+    width: 90px;
+    height: 90px;
+    border: 2px solid rgba(30, 84, 183, 0.22);
+    border-radius: 50%;
+}
+
+.knowledgeTrackHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.knowledgeTrackHeader span:first-child {
+    padding: 6px 9px;
+    color: var(--white-paper);
+    background: var(--blue);
+}
+
+.knowledgeTrackHeader span:last-child {
+    color: var(--red);
+}
+
+.knowledgeTrack h3 {
+    max-width: 520px;
+    margin: 32px 0 14px;
+    font-family: Georgia, serif;
+    font-size: clamp(1.85rem, 3vw, 2.65rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+}
+
+.knowledgeTrack>p {
+    max-width: 590px;
+    margin: 0;
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.knowledgePills {
+    margin: 28px 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+}
+
+.knowledgePills li {
+    padding: 9px 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(24, 33, 55, 0.5);
+    border-radius: 999px;
+    background: var(--paper);
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.knowledgePills li:nth-child(odd) {
+    background: rgba(244, 220, 117, 0.42);
+}
+
+.knowledgePills li span {
+    color: var(--blue);
+    font-size: 11px;
+}
+
 /* Certifications */
 
 .certifications {
@@ -847,6 +958,7 @@
     .experience,
     .about,
     .skills,
+    .knowledge,
     .certifications,
     .footer {
         margin-left: 40px;
@@ -871,7 +983,8 @@
     .projects,
     .experience,
     .about,
-    .skills {
+    .skills,
+    .knowledge {
         padding: 75px 22px;
     }
 
@@ -933,8 +1046,18 @@
 
     .educationGrid,
     .skillsGrid,
+    .knowledgeGrid,
     .certifications {
         grid-template-columns: 1fr;
+    }
+
+    .knowledgeTrack {
+        min-height: 0;
+        padding: 25px 20px;
+    }
+
+    .knowledgeTrack:nth-child(2) {
+        transform: none;
     }
 
     .researchFeature {
@@ -966,5 +1089,36 @@
     .primaryButton,
     .project {
         transition: none;
+    }
+}
+
+.knowledgeLink {
+    display: inline-block;
+    color: var(--blue);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.knowledgeLink:hover {
+    color: var(--red);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transform: translateX(3px);
+}
+
+.knowledgeLink:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 4px;
+    border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .knowledgeLink {
+        transition: none;
+    }
+
+    .knowledgeLink:hover {
+        transform: none;
     }
 }

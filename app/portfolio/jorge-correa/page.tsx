@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Link from "next/link";
 
 const expertise = [
   {
@@ -163,12 +164,68 @@ const certifications = [
   "UAB — Responsible Conduct of Research Training",
 ];
 
+type KnowledgeModule = {
+  title: string;
+  href?: string;
+};
+
+type KnowledgeTrack = {
+  code: string;
+  title: string;
+  description: string;
+  modules: KnowledgeModule[];
+};
+
+const knowledgeTracks: KnowledgeTrack[] = [
+  {
+    code: "FIN",
+    title: "Finance for Construction",
+    description:
+      "Core financial concepts translated into decisions for projects, contractors and construction organizations.",
+    modules: [
+      {
+        title: "Depreciation",
+        href: "/portfolio/jorge-correa/knowledge/finance-for-construction/depreciation",
+      },
+      {
+        title: "Financial Statement Analysis",
+      },
+      {
+        title: "Time Value of Money",
+      },
+      {
+        title: "Cash Flow Analysis",
+      },
+    ],
+  },
+  {
+    code: "AI",
+    title: "AI for Construction",
+    description:
+      "Practical foundations for understanding and applying artificial intelligence across the built environment.",
+    modules: [
+      {
+        title: "Computer Vision",
+      },
+      {
+        title: "Object Detection & Segmentation",
+      },
+      {
+        title: "Model Evaluation",
+      },
+      {
+        title: "AI-Assisted Inspection",
+      },
+    ],
+  },
+];
+
 export default function Home() {
   return (
     <main className={styles.notebook}>
       <div className={styles.notebookMargin} />
 
-      <div className={styles.binderHoles} aria-hidden="true">
+      <div className={styles.binderHoles} aria-hidden="false">
         {Array.from({ length: 15 }).map((_, index) => (
           <span key={index} />
         ))}
@@ -191,6 +248,7 @@ export default function Home() {
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#about">About</a>
+          <a href="#knowledge">Knowledge</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
@@ -449,6 +507,60 @@ export default function Home() {
                   <span key={skill}>{skill}</span>
                 ))}
               </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.knowledge} id="knowledge">
+        <div className={styles.sectionIntroduction}>
+          <div>
+            <span className={styles.sectionNumber}>05</span>
+            <p className={styles.sectionKicker}>Knowledge Studio</p>
+          </div>
+
+          <div>
+            <h2>Practical modules for modern construction.</h2>
+            <p>
+              A growing collection of concise learning tracks connecting
+              engineering judgment, finance and emerging technology.
+            </p>
+          </div>
+        </div>
+
+        <div className={styles.knowledgeGrid}>
+          {knowledgeTracks.map((track) => (
+            <article className={styles.knowledgeTrack} key={track.code}>
+              <div className={styles.knowledgeTrackHeader}>
+                <span>{track.code}</span>
+                <span>
+                  {String(track.modules.length).padStart(2, "0")} modules
+                </span>
+              </div>
+
+              <h3>{track.title}</h3>
+              <p>{track.description}</p>
+
+              <ul className={styles.knowledgePills}>
+                {track.modules.map((module, index) => (
+                  <li key={module.title}>
+                    <span>
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    {module.href ? (
+                      <Link
+                        href={module.href}
+                        className={styles.knowledgeLink}
+                      >
+                        {module.title} →
+                      </Link>
+                    ) : (
+                      module.title
+                    )}
+                  </li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
