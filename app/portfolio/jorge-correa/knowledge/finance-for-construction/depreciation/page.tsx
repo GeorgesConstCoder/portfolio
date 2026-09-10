@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-
+import StraightLineExample from "./StraightLineExample";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -341,6 +341,28 @@ export default function DepreciationPage() {
                         depreciation may follow separately prescribed rules.
                     </p>
                 </div>
+            </section>
+
+            <section
+                id="straight-line"
+                className={styles.methodsSection}
+                aria-labelledby="straight-line-title"
+            >
+                <div>
+                    <div className={styles.sectionLabel}>
+                        <span>04</span>
+                        <p>Depreciation / Interactive example</p>
+                    </div>
+
+                    <h2
+                        id="straight-line-title"
+                        className={styles.methodsTitle}
+                    >
+                        Straight-Line Method
+                    </h2>
+                </div>
+
+                <StraightLineExample />
             </section>
 
             <footer className={styles.footer}>
